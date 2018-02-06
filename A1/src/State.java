@@ -7,20 +7,22 @@ public class State {
     private LinkedList<Truck> trucks;
     private LinkedList<Package> awaitingPickup;
     private LinkedList<Package> enRoute;
+    private int totalDist;
 
-    public State(int numTrucks, int numPackages, int maxPackages, int dimentions){
+    public State(int numTrucks, int numPackages, int maxPackages, int dimensions){
         trucks = new LinkedList<>();
         for (int i = 0; i < numTrucks; i++){
-            trucks.add(new Truck(maxPackages, dimentions));
+            trucks.add(new Truck(maxPackages, dimensions));
         }
         awaitingPickup = new LinkedList<>();
         for (int i = 0; i < numPackages; i++){
-            awaitingPickup.add(new Package(dimentions));
+            awaitingPickup.add(new Package(dimensions));
         }
         enRoute = new LinkedList<>();
+        totalDist = 0;
     }
 
-    public State (State old){ //TODO: DEEP COPY
+    public State (State old){
         trucks = new LinkedList<>();
         enRoute = new LinkedList<>();
         awaitingPickup = new LinkedList<>();

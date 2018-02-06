@@ -7,10 +7,12 @@ public class Truck {
     private LinkedList<Package> packages;
     private float[] location;
     private int maxPackages;
+    private int truckDist;
 
     public Truck(int maxPackages, int dimentions){
         packages = new LinkedList<>();
         location = new float[dimentions];
+        truckDist = 0;
         this.maxPackages = maxPackages;
 
         for (int i =0; i < dimentions; i++){
