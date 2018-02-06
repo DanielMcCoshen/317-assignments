@@ -21,6 +21,22 @@ public class State {
     }
 
     public State (State old){ //TODO: DEEP COPY
+        trucks = new LinkedList<>();
+        enRoute = new LinkedList<>();
+        awaitingPickup = new LinkedList<>();
+
+        for (Truck t : old.getTrucks()){
+            Truck tNew = new Truck(t);
+            trucks.add(tNew);
+            for (Package p : t.getPackages()){
+                Package pNew = new Package(p);
+                tNew.getPackages().add(pNew);
+                enRoute.add(pNew);
+            }
+        }
+        for (Package p : old.getAwaitingPickup()){
+            awaitingPickup.add(new Package(p));
+        }
     }
 
     public LinkedList<Truck> getTrucks() {

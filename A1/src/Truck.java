@@ -17,4 +17,25 @@ public class Truck {
             location[i] = 0;
         }
     }
+    public Truck(Truck old){
+        packages = new LinkedList<>();
+        location = new float[old.getLocation().length];
+        for (int i = 0; i < old.getLocation().length; i++){
+            location[i] = old.getLocation()[i];
+        }
+        maxPackages = old.getMaxPackages();
+
+    }
+
+    public float[] getLocation(){
+        return location;
+    }
+
+    public int getMaxPackages() {
+        return maxPackages;
+    }
+
+    public LinkedList<Package> getPackages() {
+        return packages;
+    }
 }
