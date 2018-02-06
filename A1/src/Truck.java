@@ -1,3 +1,4 @@
+import java.security.InvalidParameterException;
 import java.util.LinkedList;
 
 /**
@@ -39,5 +40,26 @@ public class Truck {
 
     public LinkedList<Package> getPackages() {
         return packages;
+    }
+
+    public float moveLocation(float[] newLocate){
+        float retval = distanceTo(newLocate);
+        for(int i = 0; i < location.length; i++)
+        {
+            location[i] = newLocate[i];
+        }
+        return retval;
+    }
+
+    public float distanceTo (float[] other){
+        if (location.length != other.length){
+            throw new InvalidParameterException();
+        }
+        float total = 0.0f;
+
+        for (int i = 0; i < location.length; i++){
+            total += Math.pow((location[i] - other[i]), 2);
+        }
+        return (float) Math.sqrt(total);
     }
 }

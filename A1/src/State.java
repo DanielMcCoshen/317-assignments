@@ -7,12 +7,12 @@ public class State {
     private LinkedList<Truck> trucks;
     private LinkedList<Package> awaitingPickup;
     private LinkedList<Package> enRoute;
-    private int totalDist;
+    protected int totalDist;
 
-    public State(int numTrucks, int numPackages, int maxPackages, int dimensions){
+    public State(int numTrucks, int numPackages, int truckCapacity, int dimensions){
         trucks = new LinkedList<>();
         for (int i = 0; i < numTrucks; i++){
-            trucks.add(new Truck(maxPackages, dimensions));
+            trucks.add(new Truck(truckCapacity, dimensions));
         }
         awaitingPickup = new LinkedList<>();
         for (int i = 0; i < numPackages; i++){
@@ -26,6 +26,7 @@ public class State {
         trucks = new LinkedList<>();
         enRoute = new LinkedList<>();
         awaitingPickup = new LinkedList<>();
+        totalDist = old.totalDist;
 
         for (Truck t : old.getTrucks()){
             Truck tNew = new Truck(t);
