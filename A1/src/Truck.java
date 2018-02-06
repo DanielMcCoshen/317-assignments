@@ -9,13 +9,13 @@ public class Truck {
     private int maxPackages;
     private int truckDist;
 
-    public Truck(int maxPackages, int dimentions){
+    public Truck(int maxPackages, int dimensions){
         packages = new LinkedList<>();
-        location = new float[dimentions];
+        location = new float[dimensions];
         truckDist = 0;
         this.maxPackages = maxPackages;
 
-        for (int i =0; i < dimentions; i++){
+        for (int i =0; i < dimensions; i++){
             location[i] = 0;
         }
     }
