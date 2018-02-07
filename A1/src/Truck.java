@@ -42,13 +42,12 @@ public class Truck {
         return packages;
     }
 
-    public float moveLocation(float[] newLocate){
-        float retval = distanceTo(newLocate);
+    public void moveLocation(float[] newLocate){
+        truckDist += distanceTo(newLocate);
         for(int i = 0; i < location.length; i++)
         {
             location[i] = newLocate[i];
         }
-        return retval;
     }
 
     public float distanceTo (float[] other){
@@ -61,5 +60,9 @@ public class Truck {
             total += Math.pow((location[i] - other[i]), 2);
         }
         return (float) Math.sqrt(total);
+    }
+
+    public int getTruckDist() {
+        return truckDist;
     }
 }

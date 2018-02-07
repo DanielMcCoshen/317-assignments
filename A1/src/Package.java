@@ -11,7 +11,7 @@ public class Package {
     public Package(int dimensions){
         source = new float[dimensions];
         destination = new float[dimensions];
-        Random r = new Random(); // TODO: Bound between 0 and 1
+        Random r = new Random(); // TODO: Bound between 0 and 1 (is already bound. nextFloat gives bbtween 0 and 1)
 
         for (int i = 0; i < dimensions; i++){
             source[i] = r.nextFloat();

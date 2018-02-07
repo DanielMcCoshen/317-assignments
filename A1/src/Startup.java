@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 /**
  * Created by daniel on 05/02/18.
  */
@@ -12,12 +14,36 @@ public class Startup {
         State current = new State(1, 1, 1, 1);
 
         while (current != null) {
-            current = successor(current);
+            LinkedList<State> successors =  successor(current);
+
+            current = select(successors);
+
         }
     }
-    private static State successor(State prev) {
-        return null;
+    private static LinkedList<State> successor(State prev) { //TODO: enumerates all possible successor states
+        LinkedList<State> toRet = new LinkedList<>();
+        for (Truck t : prev.getTrucks()){
+
+
+        }
+        return toRet;
     }
+
+    private static State select (LinkedList<State> states){ //determines the best successor state and returns it
+        State current = states.getFirst() ;
+
+        for (State eval : states){
+            if (current.cost() + heuristic(current) > eval.cost() + heuristic(eval)){
+                current = eval;
+            }
+        }
+        return current;
+    }
+
+    private static float heuristic(State state){ //TODO: estimates cost to goal
+        return 0;
+    }
+
 }
 
 

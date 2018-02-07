@@ -54,5 +54,15 @@ public class State {
         return enRoute;
     }
 
-
+    public float cost(){ //this is the cost function given in the assignment spec
+        float max = 0;
+        float total = 0;
+        for (Truck t : trucks){
+            total += t.getTruckDist();
+            if (t.getTruckDist() > max){
+                max = t.getTruckDist();
+            }
+        }
+        return total + max;
+    }
 }
