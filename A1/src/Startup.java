@@ -8,7 +8,16 @@ public class Startup {
     * K - max packages/vehicle
     * Y - dimensions in the universe
     */
-    public static void main(char args[]){
+    public static void main(char args[]) {
+        State current = new State(1, 1, 1, 1);
 
+        while (current != null) {
+            current = successor(current);
+        }
+    }
+    private static State successor(State prev) {
+        return null;
     }
 }
+
+
