@@ -23,7 +23,17 @@ public class Startup {
     private static LinkedList<State> successor(State prev) { //TODO: enumerates all possible successor states
         LinkedList<State> toRet = new LinkedList<>();
         for (Truck t : prev.getTrucks()){
+            float[] oldLoc = new float[t.getLocation().length]; // backup truck location
+            System.arraycopy(t.getLocation(), 0, oldLoc, 0, t.getLocation().length);
+            float oldDist = t.getTruckDist(); //backup truck distance
 
+            if (!t.isfull()){ //pick up packages
+
+            }
+
+            if (t.getPackages().size() > 0){ //drop off packages
+
+            }
 
         }
         return toRet;

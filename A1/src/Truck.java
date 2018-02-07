@@ -8,29 +8,29 @@ public class Truck {
     private LinkedList<Package> packages;
     private float[] location;
     private int maxPackages;
-    private int truckDist;
 
-    public Truck(int maxPackages, int dimensions){
+    private float truckDist;
+
+    public Truck(int maxPackages, int dimensions) {
         packages = new LinkedList<>();
         location = new float[dimensions];
         truckDist = 0;
         this.maxPackages = maxPackages;
 
-        for (int i =0; i < dimensions; i++){
+        for (int i = 0; i < dimensions; i++) {
             location[i] = 0;
         }
     }
-    public Truck(Truck old){
+
+    public Truck(Truck old) {
         packages = new LinkedList<>();
         location = new float[old.getLocation().length];
-        for (int i = 0; i < old.getLocation().length; i++){
-            location[i] = old.getLocation()[i];
-        }
+        System.arraycopy(old.getLocation(), 0, location, 0, old.getLocation().length);
         maxPackages = old.getMaxPackages();
 
     }
 
-    public float[] getLocation(){
+    public float[] getLocation() {
         return location;
     }
 
@@ -42,27 +42,32 @@ public class Truck {
         return packages;
     }
 
-    public void moveLocation(float[] newLocate){
+    public void moveLocation(float[] newLocate) {
         truckDist += distanceTo(newLocate);
-        for(int i = 0; i < location.length; i++)
-        {
-            location[i] = newLocate[i];
-        }
+        System.arraycopy(newLocate, 0, location, 0, location.length);
     }
 
-    public float distanceTo (float[] other){
-        if (location.length != other.length){
+    public float distanceTo(float[] other) {
+        if (location.length != other.length) {
             throw new InvalidParameterException();
         }
         float total = 0.0f;
 
-        for (int i = 0; i < location.length; i++){
+        for (int i = 0; i < location.length; i++) {
             total += Math.pow((location[i] - other[i]), 2);
         }
         return (float) Math.sqrt(total);
     }
 
-    public int getTruckDist() {
+    public float getTruckDist() {
         return truckDist;
+    }
+
+    public void setTruckDist(float truckDist) {
+        this.truckDist = truckDist;
+    }
+
+    public boolean isfull(){
+        return packages.size() >= maxPackages;
     }
 }
