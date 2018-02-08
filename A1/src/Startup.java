@@ -11,14 +11,21 @@ public class Startup {
     * K - max packages/vehicle
     * Y - dimensions in the universe
     */
-    public static void main(char args[]) {
+    public static void main(String args[]) {
         State current = new State(1, 1, 1, 1);
 
+
+        System.out.println("INITIAL STATE:\n" + current);
+
+        int i = 0;
         while (!isGoal(current)) {
+            System.out.println("STATE " + i + ":\n" + current);
             LinkedList<State> successors =  successor(current);
             current = select(successors);
-
+            i++;
         }
+
+        System.out.println("FINAL COST OF SOLUTION: " + current.cost());
     }
     private static LinkedList<State> successor(State prev) { //TODO: enumerates all possible successor states
         LinkedList<State> toRet = new LinkedList<>();
