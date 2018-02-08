@@ -12,10 +12,7 @@ public class Startup {
     * Y - dimensions in the universe
     */
     public static void main(String args[]) {
-        State current = new State(1, 1, 1, 1);
-
-
-        System.out.println("INITIAL STATE:\n" + current);
+        State current = new State(2, 3, 2, 2);
 
         int i = 0;
         while (!isGoal(current)) {
@@ -25,17 +22,18 @@ public class Startup {
             i++;
         }
 
+        System.out.println("STATE " + i + ":\n" + current);
         System.out.println("FINAL COST OF SOLUTION: " + current.cost());
     }
     private static LinkedList<State> successor(State prev) { //TODO: enumerates all possible successor states
         LinkedList<State> toRet = new LinkedList<>();
-        for (Truck t : prev.getTrucks()){
+        for (Truck t : prev.getTrucks()) {
             float[] oldLoc = new float[t.getLocation().length]; // backup truck location
             System.arraycopy(t.getLocation(), 0, oldLoc, 0, t.getLocation().length);
             float oldDist = t.getTruckDist(); //backup truck distance
 
-            if (!t.isfull()){ //pick up packages
-                for (Package p : new LinkedList<Package>(prev.getAwaitingPickup())){
+            if (!t.isFull()) { //pick up packages
+                for (Package p : new LinkedList<Package>(prev.getAwaitingPickup())) {
                     //pick up package
                     t.moveLocation(p.getSource());
                     t.getPackages().add(p);
@@ -47,13 +45,13 @@ public class Startup {
                     prev.getEnRoute().remove(p);
                     prev.getAwaitingPickup().add(p);
                     t.getPackages().remove(p);
-                    System.arraycopy(oldLoc,  0, t.getLocation(), 0, t.getLocation().length);
+                    System.arraycopy(oldLoc, 0, t.getLocation(), 0, t.getLocation().length);
                     t.setTruckDist(oldDist);
                 }
             }
 
-            if (t.getPackages().size() > 0){ //drop off packages
-                for(Package p : t.getPackages()){
+            if (t.getPackages().size() > 0) { //drop off packages
+                for (Package p : new LinkedList<Package>(t.getPackages())) {
                     //drop off packages
                     t.moveLocation(p.getDestination());
                     t.getPackages().remove(p);
@@ -63,12 +61,14 @@ public class Startup {
                     //restore previous values
                     prev.getEnRoute().add(p);
                     t.getPackages().add(p);
-                    System.arraycopy(oldLoc,  0, t.getLocation(), 0, t.getLocation().length);
+                    System.arraycopy(oldLoc, 0, t.getLocation(), 0, t.getLocation().length);
                     t.setTruckDist(oldDist);
                 }
             }
-            t.moveLocation(new float[oldLoc.length]); // move to the garage;
-            toRet.add(new State(prev));
+            if (!Arrays.equals(new float[t.getLocation().length], t.getLocation())) {
+                t.moveLocation(new float[oldLoc.length]); // move to the garage;
+                toRet.add(new State(prev));
+            }
         }
         return toRet;
     }

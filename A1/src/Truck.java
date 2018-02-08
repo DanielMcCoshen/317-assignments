@@ -8,13 +8,12 @@ public class Truck {
     private LinkedList<Package> packages;
     private float[] location;
     private int maxPackages;
-
     private float truckDist;
 
     public Truck(int maxPackages, int dimensions) {
         packages = new LinkedList<>();
         location = new float[dimensions];
-        truckDist = 0;
+        truckDist = 0.0f;
         this.maxPackages = maxPackages;
 
         for (int i = 0; i < dimensions; i++) {
@@ -27,7 +26,7 @@ public class Truck {
         location = new float[old.getLocation().length];
         System.arraycopy(old.getLocation(), 0, location, 0, old.getLocation().length);
         maxPackages = old.getMaxPackages();
-
+        truckDist = old.getTruckDist();
     }
 
     public float[] getLocation() {
@@ -43,7 +42,7 @@ public class Truck {
     }
 
     public void moveLocation(float[] newLocate) {
-        truckDist += distanceTo(newLocate);
+        truckDist = truckDist + Math.abs(distanceTo(newLocate));
         System.arraycopy(newLocate, 0, location, 0, location.length);
     }
 
@@ -67,7 +66,7 @@ public class Truck {
         this.truckDist = truckDist;
     }
 
-    public boolean isfull(){
+    public boolean isFull(){
         return packages.size() >= maxPackages;
     }
 }
