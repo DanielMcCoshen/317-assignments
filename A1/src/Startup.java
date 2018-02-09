@@ -66,8 +66,12 @@ public class Startup {
                 }
             }
             if (!Arrays.equals(new float[t.getLocation().length], t.getLocation())) {
+                //move to garage
                 t.moveLocation(new float[oldLoc.length]); // move to the garage;
                 toRet.add(new State(prev));
+                //reset locaion
+                System.arraycopy(oldLoc, 0, t.getLocation(), 0, t.getLocation().length);
+                t.setTruckDist(oldDist);
             }
         }
         return toRet;
@@ -77,7 +81,7 @@ public class Startup {
         State current = states.getFirst() ;
 
         for (State eval : states){
-            if (current.cost() + heuristic(current) > eval.cost() + heuristic(eval)){
+            if (current.cost() + danheuristic(current) > eval.cost() + danheuristic(eval)){
                 current = eval;
             }
         }
@@ -85,8 +89,25 @@ public class Startup {
         return current;
     }
 
-    private static float heuristic(State state){ //TODO: estimates cost to goal
-        return 0;
+    private static float danheuristic(State state){ //TODO: estimates cost to goal
+        float toRet = 0;
+        float max = 0;
+
+        for (Truck t : state.getTrucks()){
+            float estimate = 0;
+            for (Package p : t.getPackages()){
+                estimate += t.distanceTo(p.getDestination());
+            }
+            for (Package p : state.getAwaitingPickup()){
+                estimate += t.distanceTo(p.getSource());
+            }
+            toRet += estimate;
+            if (estimate > max){
+                max = estimate;
+            }
+        }
+
+        return toRet + max;
     }
 
     private static boolean isGoal(State eval){ //TODO: determine if at goal
