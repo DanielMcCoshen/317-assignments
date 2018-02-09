@@ -12,7 +12,7 @@ public class Startup {
     * Y - dimensions in the universe
     */
     public static void main(String args[]) {
-        State current = new State(2, 3, 2, 2);
+        State current = new State(2, 4, 2, 2);
 
         int i = 0;
         while (!isGoal(current)) {
@@ -25,7 +25,7 @@ public class Startup {
         System.out.println("STATE " + i + ":\n" + current);
         System.out.println("FINAL COST OF SOLUTION: " + current.cost());
     }
-    private static LinkedList<State> successor(State prev) { //TODO: enumerates all possible successor states
+    private static LinkedList<State> successor(State prev) {
         LinkedList<State> toRet = new LinkedList<>();
         for (Truck t : prev.getTrucks()) {
             float[] oldLoc = new float[t.getLocation().length]; // backup truck location
@@ -69,7 +69,7 @@ public class Startup {
                 //move to garage
                 t.moveLocation(new float[oldLoc.length]); // move to the garage;
                 toRet.add(new State(prev));
-                //reset locaion
+                //reset location
                 System.arraycopy(oldLoc, 0, t.getLocation(), 0, t.getLocation().length);
                 t.setTruckDist(oldDist);
             }
@@ -81,7 +81,7 @@ public class Startup {
         State current = states.getFirst() ;
 
         for (State eval : states){
-            if (current.cost() + danheuristic(current) > eval.cost() + danheuristic(eval)){
+            if (current.cost() + koleHeuristic(current) > eval.cost() + koleHeuristic(eval)){
                 current = eval;
             }
         }
@@ -89,7 +89,18 @@ public class Startup {
         return current;
     }
 
-    private static float danheuristic(State state){ //TODO: estimates cost to goal
+    private static float koleHeuristic(State state){
+        float retVal = 0.0f;
+        for(Truck t : state.getTrucks()) {
+            if (Arrays.equals(t.getLocation(), new float[t.getLocation().length])) {
+                retVal += 10; //Math.sqrt(t.getLocation().length);
+            }
+        }
+        System.out.println(retVal);
+        return retVal;
+    }
+
+    private static float danheuristic(State state){
         float toRet = 0;
         float max = 0;
 
