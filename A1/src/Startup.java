@@ -2,7 +2,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
- * Created by daniel on 05/02/18.
+ * Work by Daniel McCoshen, Kole Phillips, Kayland Remy
+ * This file contains our heuristic and selector functions, as well as the
+ * main function.
  */
 public class Startup {
     /*
@@ -12,23 +14,28 @@ public class Startup {
     * Y - dimensions in the universe
     */
     public static void main(String args[]) {
-        int M = 4;
-        int N = 8;
+        int M = 3;
+        int N = 5;
         int K = 2;
-        int Y = 2;
-
-        State current = new State(M, N, K, Y);
+        int Y = 3;
 
         int i = 0;
-        while (!isGoal(current)) {
-            System.out.println("STATE " + i + ":\n" + current);
-            LinkedList<State> successors = successor(current);
-            current = select(successors);
-            i++;
+        float avg = 0;
+        for(int j = 0; j < 10000; j++) {
+            State current = new State(M, N, K, Y);
+            while (!isGoal(current)) {
+                //System.out.println("STATE " + i + ":\n" + current);
+                LinkedList<State> successors = successor(current);
+                current = select(successors);
+                i++;
+            }
+            avg += current.cost();
         }
-        System.out.println("STATE " + i + ":\n" + current);
 
-        System.out.println("Cost for route with "+  M + " trucks, " + N + " packages, " + K + " truck capacity, and " + Y + " dimensions: " + current.cost());
+        System.out.println("AVG COST: " + avg/10000);
+        //System.out.println("STATE " + i + ":\n" + current);
+
+        //System.out.println("Cost for route with "+  M + " trucks, " + N + " packages, " + K + " truck capacity, and " + Y + " dimensions: " + current.cost());
     }
 
     /**
@@ -112,30 +119,17 @@ public class Startup {
      */
     private static float heuristic(State state){
         float toRet = 0;
-        float max = 0;
-        float garageScore = 0;
 
         for (Truck t : state.getTrucks()){
-
-            if ((state.getAwaitingPickup().isEmpty() && t.getPackages().isEmpty())) {
-                float estimate = 0;
-                for (Package p : t.getPackages()) {
-                    estimate += t.distanceTo(p.getDestination());
+            // Our heuristic minimizes the number of trucks in the garage at any give time
+            if (!(state.getAwaitingPickup().isEmpty() && t.getPackages().isEmpty())) {
+                if (Arrays.equals(t.getLocation(), new float[t.getLocation().length])) {
+                    // We have determined that this length is an appropriate estimate for the longest possible path
+                    toRet += Math.sqrt(t.getLocation().length);
                 }
-                for (Package p : state.getAwaitingPickup()) {
-                    estimate += t.distanceTo(p.getSource());
-                }
-                toRet += estimate;
-                if (estimate > max) {
-                    max = estimate;
-                }
-            }
-            else if (Arrays.equals(t.getLocation(), new float[t.getLocation().length])) {
-                garageScore += Math.sqrt(t.getLocation().length);
             }
         }
-
-        return toRet + garageScore + max;
+        return toRet;
     }
 
     private static boolean isGoal(State eval){ //TODO: determine if at goal

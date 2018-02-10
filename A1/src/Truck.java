@@ -2,7 +2,8 @@ import java.security.InvalidParameterException;
 import java.util.LinkedList;
 
 /**
- * Created by daniel on 05/02/18.
+ * Work by Daniel McCoshen, Kole Phillips, Kayland Remy
+ * Contains all methods to modify and create State objects
  */
 public class Truck {
     private LinkedList<Package> packages;

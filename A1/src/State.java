@@ -1,7 +1,8 @@
 import java.util.LinkedList;
 
 /**
- * Created by daniel on 05/02/18.
+ * Work by Daniel McCoshen, Kole Phillips, Kayland Remy
+ * Contains all methods to modify and create State objects
  */
 public class State {
     private LinkedList<Truck> trucks;
@@ -67,7 +68,6 @@ public class State {
         return total + max;
     }
 
-    // Debugging aid
     public String toString()
     {
         String retVal = "";
