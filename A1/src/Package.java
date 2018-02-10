@@ -18,6 +18,8 @@ public class Package {
             destination[i] = r.nextFloat();
         }
     }
+
+    // Deep clone
     public Package(Package old){
         source = new float[old.getSource().length];
         destination = new float[old.getDestination().length];

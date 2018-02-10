@@ -22,6 +22,7 @@ public class State {
         totalDist = 0;
     }
 
+    // Deep clone
     public State (State old){
         trucks = new LinkedList<>();
         enRoute = new LinkedList<>();
@@ -66,6 +67,7 @@ public class State {
         return total + max;
     }
 
+    // Debugging aid
     public String toString()
     {
         String retVal = "";

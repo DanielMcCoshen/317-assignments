@@ -21,6 +21,7 @@ public class Truck {
         }
     }
 
+    // Deep clone
     public Truck(Truck old) {
         packages = new LinkedList<>();
         location = new float[old.getLocation().length];
