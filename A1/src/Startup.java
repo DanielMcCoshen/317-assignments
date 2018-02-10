@@ -20,22 +20,15 @@ public class Startup {
         int Y = 3;
 
         int i = 0;
-        float avg = 0;
-        for(int j = 0; j < 10000; j++) {
-            State current = new State(M, N, K, Y);
-            while (!isGoal(current)) {
-                //System.out.println("STATE " + i + ":\n" + current);
-                LinkedList<State> successors = successor(current);
-                current = select(successors);
-                i++;
-            }
-            avg += current.cost();
+        State current = new State(M, N, K, Y);
+        while (!isGoal(current)) {
+            System.out.println("STATE " + i + ":\n" + current);
+            LinkedList<State> successors = successor(current);
+            current = select(successors);
+            i++;
         }
-
-        System.out.println("AVG COST: " + avg/10000);
-        //System.out.println("STATE " + i + ":\n" + current);
-
-        //System.out.println("Cost for route with "+  M + " trucks, " + N + " packages, " + K + " truck capacity, and " + Y + " dimensions: " + current.cost());
+        System.out.println("STATE " + i + ":\n" + current);
+        System.out.println("Cost for route with "+  M + " trucks, " + N + " packages, " + K + " truck capacity, and " + Y + " dimensions: " + current.cost());
     }
 
     /**
