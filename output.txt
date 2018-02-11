@@ -1,0 +1,1068 @@
+----- M = N = K = Y = 1 -----
+STATE 0:
+Truck 1;
+Location: 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.5394039
+Package destination:  0.500577
+
+
+Number of possible transitions to STATE 1: 1
+STATE 1:
+Truck 1;
+Location: 0.5394039
+Package Destinations:
+ 0.500577
+Distance travelled: 0.5394039
+
+
+Number of possible transitions to STATE 2: 2
+STATE 2:
+Truck 1;
+Location: 0.500577
+Package Destinations:
+Distance travelled: 0.57823086
+
+
+Number of possible transitions to STATE 3: 1
+STATE 3:
+Truck 1;
+Location: 0.0
+Package Destinations:
+Distance travelled: 1.0788078
+
+
+Cost for route with 1 trucks, 1 packages, 1 truck capacity, and 1 dimensions: 2.1576157
+Search time elapsed (seconds): 0.016777216
+
+
+----- M = K = 1, N = 2, Y = 2 -----
+STATE 0:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.27549732 0.59820724
+Package destination:  0.45517713 0.41644847
+
+Package awaiting pickup at:  0.5126462 0.9364535
+Package destination:  0.32618123 0.35026562
+
+
+Number of possible transitions to STATE 1: 2
+STATE 1:
+Truck 1;
+Location: 0.27549732 0.59820724
+Package Destinations:
+ 0.45517713 0.41644847
+Distance travelled: 0.65859747
+
+Package awaiting pickup at:  0.5126462 0.9364535
+Package destination:  0.32618123 0.35026562
+
+
+Number of possible transitions to STATE 2: 2
+STATE 2:
+Truck 1;
+Location: 0.45517713 0.41644847
+Package Destinations:
+Distance travelled: 0.91417736
+
+Package awaiting pickup at:  0.5126462 0.9364535
+Package destination:  0.32618123 0.35026562
+
+
+Number of possible transitions to STATE 3: 2
+STATE 3:
+Truck 1;
+Location: 0.5126462 0.9364535
+Package Destinations:
+ 0.32618123 0.35026562
+Distance travelled: 1.4373484
+
+
+Number of possible transitions to STATE 4: 2
+STATE 4:
+Truck 1;
+Location: 0.32618123 0.35026562
+Package Destinations:
+Distance travelled: 2.0524788
+
+
+Number of possible transitions to STATE 5: 1
+STATE 5:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 2.531102
+
+
+Cost for route with 1 trucks, 2 packages, 1 truck capacity, and 2 dimensions: 5.062204
+Search time elapsed (seconds): 0.016777216
+
+
+
+----- M = K = 1, N = 5, Y = 2 -----
+STATE 0:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.22858387 0.95641935
+Package destination:  0.6239756 0.86604977
+
+Package awaiting pickup at:  0.38227457 0.20706207
+Package destination:  0.29292417 0.9940257
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+Package awaiting pickup at:  0.19311392 0.1757623
+Package destination:  0.71414614 0.5960791
+
+Package awaiting pickup at:  0.7933311 0.7835147
+Package destination:  0.6009529 0.11369085
+
+
+Number of possible transitions to STATE 1: 5
+STATE 1:
+Truck 1;
+Location: 0.19311392 0.1757623
+Package Destinations:
+ 0.71414614 0.5960791
+Distance travelled: 0.2611233
+
+Package awaiting pickup at:  0.7933311 0.7835147
+Package destination:  0.6009529 0.11369085
+
+Package awaiting pickup at:  0.22858387 0.95641935
+Package destination:  0.6239756 0.86604977
+
+Package awaiting pickup at:  0.38227457 0.20706207
+Package destination:  0.29292417 0.9940257
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+
+Number of possible transitions to STATE 2: 2
+STATE 2:
+Truck 1;
+Location: 0.71414614 0.5960791
+Package Destinations:
+Distance travelled: 0.9305565
+
+Package awaiting pickup at:  0.7933311 0.7835147
+Package destination:  0.6009529 0.11369085
+
+Package awaiting pickup at:  0.22858387 0.95641935
+Package destination:  0.6239756 0.86604977
+
+Package awaiting pickup at:  0.38227457 0.20706207
+Package destination:  0.29292417 0.9940257
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+
+Number of possible transitions to STATE 3: 5
+STATE 3:
+Truck 1;
+Location: 0.7933311 0.7835147
+Package Destinations:
+ 0.6009529 0.11369085
+Distance travelled: 1.1340321
+
+Package awaiting pickup at:  0.22858387 0.95641935
+Package destination:  0.6239756 0.86604977
+
+Package awaiting pickup at:  0.38227457 0.20706207
+Package destination:  0.29292417 0.9940257
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+
+Number of possible transitions to STATE 4: 2
+STATE 4:
+Truck 1;
+Location: 0.6009529 0.11369085
+Package Destinations:
+Distance travelled: 1.8309348
+
+Package awaiting pickup at:  0.22858387 0.95641935
+Package destination:  0.6239756 0.86604977
+
+Package awaiting pickup at:  0.38227457 0.20706207
+Package destination:  0.29292417 0.9940257
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+
+Number of possible transitions to STATE 5: 4
+STATE 5:
+Truck 1;
+Location: 0.38227457 0.20706207
+Package Destinations:
+ 0.29292417 0.9940257
+Distance travelled: 2.0687127
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+Package awaiting pickup at:  0.22858387 0.95641935
+Package destination:  0.6239756 0.86604977
+
+
+Number of possible transitions to STATE 6: 2
+STATE 6:
+Truck 1;
+Location: 0.29292417 0.9940257
+Package Destinations:
+Distance travelled: 2.8607326
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+Package awaiting pickup at:  0.22858387 0.95641935
+Package destination:  0.6239756 0.86604977
+
+
+Number of possible transitions to STATE 7: 3
+STATE 7:
+Truck 1;
+Location: 0.22858387 0.95641935
+Package Destinations:
+ 0.6239756 0.86604977
+Distance travelled: 2.9352572
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+
+Number of possible transitions to STATE 8: 2
+STATE 8:
+Truck 1;
+Location: 0.6239756 0.86604977
+Package Destinations:
+Distance travelled: 3.3408446
+
+Package awaiting pickup at:  0.26864612 0.5237886
+Package destination:  0.7584526 0.46623778
+
+
+Number of possible transitions to STATE 9: 2
+STATE 9:
+Truck 1;
+Location: 0.26864612 0.5237886
+Package Destinations:
+ 0.7584526 0.46623778
+Distance travelled: 3.8342023
+
+
+Number of possible transitions to STATE 10: 2
+STATE 10:
+Truck 1;
+Location: 0.7584526 0.46623778
+Package Destinations:
+Distance travelled: 4.3273783
+
+
+Number of possible transitions to STATE 11: 1
+STATE 11:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 5.2176747
+
+
+Cost for route with 1 trucks, 5 packages, 1 truck capacity, and 2 dimensions: 10.435349
+Search time elapsed (seconds): 0.016777216
+
+
+
+----- M = N = K = Y = 2 -----
+STATE 0:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.66439945 0.6367073
+Package destination:  0.5711769 0.2757148
+
+Package awaiting pickup at:  0.13219512 0.5328058
+Package destination:  0.95245117 0.017918706
+
+
+Number of possible transitions to STATE 1: 4
+STATE 1:
+Truck 1;
+Location: 0.13219512 0.5328058
+Package Destinations:
+ 0.95245117 0.017918706
+Distance travelled: 0.54896045
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.66439945 0.6367073
+Package destination:  0.5711769 0.2757148
+
+
+Number of possible transitions to STATE 2: 4
+STATE 2:
+Truck 1;
+Location: 0.66439945 0.6367073
+Package Destinations:
+ 0.95245117 0.017918706
+ 0.5711769 0.2757148
+Distance travelled: 1.0912123
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+
+Number of possible transitions to STATE 3: 3
+STATE 3:
+Truck 1;
+Location: 0.5711769 0.2757148
+Package Destinations:
+ 0.95245117 0.017918706
+Distance travelled: 1.4640474
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+
+Number of possible transitions to STATE 4: 2
+STATE 4:
+Truck 1;
+Location: 0.95245117 0.017918706
+Package Destinations:
+Distance travelled: 1.9242961
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+
+Number of possible transitions to STATE 5: 1
+STATE 5:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 2.876916
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+
+Cost for route with 2 trucks, 2 packages, 2 truck capacity, and 2 dimensions: 5.753832
+Search time elapsed (seconds): 0.016777216
+
+
+
+----- M = K = 2, N = 6, Y = 2 -----
+STATE 0:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.24828023 0.49316728
+Package destination:  0.029343665 0.5537832
+
+Package awaiting pickup at:  0.3440466 0.15486574
+Package destination:  0.50937825 0.74893785
+
+Package awaiting pickup at:  0.13372093 0.3088491
+Package destination:  0.67359143 0.84764403
+
+Package awaiting pickup at:  0.42549992 0.5012421
+Package destination:  0.33934194 0.3140356
+
+Package awaiting pickup at:  0.2924164 0.82996523
+Package destination:  0.6633935 0.12972087
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+
+Number of possible transitions to STATE 1: 12
+STATE 1:
+Truck 1;
+Location: 0.13372093 0.3088491
+Package Destinations:
+ 0.67359143 0.84764403
+Distance travelled: 0.33655468
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.42549992 0.5012421
+Package destination:  0.33934194 0.3140356
+
+Package awaiting pickup at:  0.2924164 0.82996523
+Package destination:  0.6633935 0.12972087
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+Package awaiting pickup at:  0.24828023 0.49316728
+Package destination:  0.029343665 0.5537832
+
+Package awaiting pickup at:  0.3440466 0.15486574
+Package destination:  0.50937825 0.74893785
+
+
+Number of possible transitions to STATE 2: 12
+STATE 2:
+Truck 1;
+Location: 0.13372093 0.3088491
+Package Destinations:
+ 0.67359143 0.84764403
+Distance travelled: 0.33655468
+
+Truck 2;
+Location: 0.3440466 0.15486574
+Package Destinations:
+ 0.50937825 0.74893785
+Distance travelled: 0.37729493
+
+Package awaiting pickup at:  0.42549992 0.5012421
+Package destination:  0.33934194 0.3140356
+
+Package awaiting pickup at:  0.2924164 0.82996523
+Package destination:  0.6633935 0.12972087
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+Package awaiting pickup at:  0.24828023 0.49316728
+Package destination:  0.029343665 0.5537832
+
+
+Number of possible transitions to STATE 3: 12
+STATE 3:
+Truck 1;
+Location: 0.24828023 0.49316728
+Package Destinations:
+ 0.67359143 0.84764403
+ 0.029343665 0.5537832
+Distance travelled: 0.55357313
+
+Truck 2;
+Location: 0.3440466 0.15486574
+Package Destinations:
+ 0.50937825 0.74893785
+Distance travelled: 0.37729493
+
+Package awaiting pickup at:  0.42549992 0.5012421
+Package destination:  0.33934194 0.3140356
+
+Package awaiting pickup at:  0.2924164 0.82996523
+Package destination:  0.6633935 0.12972087
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+
+Number of possible transitions to STATE 4: 8
+STATE 4:
+Truck 1;
+Location: 0.029343665 0.5537832
+Package Destinations:
+ 0.67359143 0.84764403
+Distance travelled: 0.780746
+
+Truck 2;
+Location: 0.3440466 0.15486574
+Package Destinations:
+ 0.50937825 0.74893785
+Distance travelled: 0.37729493
+
+Package awaiting pickup at:  0.42549992 0.5012421
+Package destination:  0.33934194 0.3140356
+
+Package awaiting pickup at:  0.2924164 0.82996523
+Package destination:  0.6633935 0.12972087
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+
+Number of possible transitions to STATE 5: 10
+STATE 5:
+Truck 1;
+Location: 0.029343665 0.5537832
+Package Destinations:
+ 0.67359143 0.84764403
+Distance travelled: 0.780746
+
+Truck 2;
+Location: 0.42549992 0.5012421
+Package Destinations:
+ 0.50937825 0.74893785
+ 0.33934194 0.3140356
+Distance travelled: 0.7331196
+
+Package awaiting pickup at:  0.2924164 0.82996523
+Package destination:  0.6633935 0.12972087
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+
+Number of possible transitions to STATE 6: 7
+STATE 6:
+Truck 1;
+Location: 0.029343665 0.5537832
+Package Destinations:
+ 0.67359143 0.84764403
+Distance travelled: 0.780746
+
+Truck 2;
+Location: 0.33934194 0.3140356
+Package Destinations:
+ 0.50937825 0.74893785
+Distance travelled: 0.9392008
+
+Package awaiting pickup at:  0.2924164 0.82996523
+Package destination:  0.6633935 0.12972087
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+
+Number of possible transitions to STATE 7: 8
+STATE 7:
+Truck 1;
+Location: 0.2924164 0.82996523
+Package Destinations:
+ 0.67359143 0.84764403
+ 0.6633935 0.12972087
+Distance travelled: 1.1621693
+
+Truck 2;
+Location: 0.33934194 0.3140356
+Package Destinations:
+ 0.50937825 0.74893785
+Distance travelled: 0.9392008
+
+Package awaiting pickup at:  0.61956435 0.5796493
+Package destination:  0.52277577 0.86911136
+
+
+Number of possible transitions to STATE 8: 6
+STATE 8:
+Truck 1;
+Location: 0.2924164 0.82996523
+Package Destinations:
+ 0.67359143 0.84764403
+ 0.6633935 0.12972087
+Distance travelled: 1.1621693
+
+Truck 2;
+Location: 0.61956435 0.5796493
+Package Destinations:
+ 0.50937825 0.74893785
+ 0.52277577 0.86911136
+Distance travelled: 1.3253034
+
+
+Number of possible transitions to STATE 9: 6
+STATE 9:
+Truck 1;
+Location: 0.2924164 0.82996523
+Package Destinations:
+ 0.67359143 0.84764403
+ 0.6633935 0.12972087
+Distance travelled: 1.1621693
+
+Truck 2;
+Location: 0.50937825 0.74893785
+Package Destinations:
+ 0.52277577 0.86911136
+Distance travelled: 1.5272925
+
+
+Number of possible transitions to STATE 10: 5
+STATE 10:
+Truck 1;
+Location: 0.2924164 0.82996523
+Package Destinations:
+ 0.67359143 0.84764403
+ 0.6633935 0.12972087
+Distance travelled: 1.1621693
+
+Truck 2;
+Location: 0.52277577 0.86911136
+Package Destinations:
+Distance travelled: 1.6482105
+
+
+Number of possible transitions to STATE 11: 4
+STATE 11:
+Truck 1;
+Location: 0.67359143 0.84764403
+Package Destinations:
+ 0.6633935 0.12972087
+Distance travelled: 1.5437541
+
+Truck 2;
+Location: 0.52277577 0.86911136
+Package Destinations:
+Distance travelled: 1.6482105
+
+
+Number of possible transitions to STATE 12: 3
+STATE 12:
+Truck 1;
+Location: 0.6633935 0.12972087
+Package Destinations:
+Distance travelled: 2.2617497
+
+Truck 2;
+Location: 0.52277577 0.86911136
+Package Destinations:
+Distance travelled: 1.6482105
+
+
+Number of possible transitions to STATE 13: 2
+STATE 13:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 2.9377072
+
+Truck 2;
+Location: 0.52277577 0.86911136
+Package Destinations:
+Distance travelled: 1.6482105
+
+
+Number of possible transitions to STATE 14: 1
+STATE 14:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 2.9377072
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 2.6624339
+
+
+Cost for route with 2 trucks, 6 packages, 2 truck capacity, and 2 dimensions: 8.537848
+Search time elapsed (seconds): 0.016777216
+
+
+
+----- M = 4, N = 12, K = Y = 2 -----
+STATE 0:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 3;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 4;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.54984194 0.43168527
+Package destination:  0.7205067 0.28802907
+
+Package awaiting pickup at:  0.4368719 0.51675206
+Package destination:  0.91116196 0.76108706
+
+Package awaiting pickup at:  0.0134782195 0.19752091
+Package destination:  0.91069835 0.3499021
+
+Package awaiting pickup at:  0.36178964 0.8334547
+Package destination:  0.100663126 0.0879398
+
+Package awaiting pickup at:  0.22541434 0.2602936
+Package destination:  0.66210145 0.54323626
+
+Package awaiting pickup at:  0.41106915 0.21493721
+Package destination:  0.68988377 0.9216027
+
+Package awaiting pickup at:  0.085529864 0.6457124
+Package destination:  0.24718738 0.49627084
+
+Package awaiting pickup at:  0.80907494 0.7494013
+Package destination:  0.32036012 0.84740746
+
+Package awaiting pickup at:  0.5734406 0.946811
+Package destination:  0.48774737 0.46204233
+
+Package awaiting pickup at:  0.40265578 0.1956985
+Package destination:  0.23136175 0.35652465
+
+Package awaiting pickup at:  0.6497853 0.399863
+Package destination:  0.57287997 0.4331314
+
+Package awaiting pickup at:  0.92011684 0.2149173
+Package destination:  0.8234172 0.91323346
+
+
+Number of possible transitions to STATE 1: 48
+
+...
+
+STATE 28:
+Truck 1;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 2.0836523
+
+Truck 2;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 3.1317036
+
+Truck 3;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 2.987173
+
+Truck 4;
+Location: 0.0 0.0
+Package Destinations:
+Distance travelled: 3.146881
+
+
+Cost for route with 4 trucks, 12 packages, 2 truck capacity, and 2 dimensions: 14.496291
+Search time elapsed (seconds): 0.08388608
+
+
+
+----- M = 14, N = 42, K = 4, Y = 3 -----
+STATE 0:
+Truck 1;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 2;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 3;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 4;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 5;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 6;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 7;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 8;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 9;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 10;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 11;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 12;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 13;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Truck 14;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 0.0
+
+Package awaiting pickup at:  0.76238495 0.693525 0.20677203
+Package destination:  0.005029738 0.43426573 0.76502603
+
+Package awaiting pickup at:  0.417162 0.8564627 0.13649964
+Package destination:  0.11227876 0.59491074 0.7924798
+
+Package awaiting pickup at:  0.08927709 0.40747613 0.41866255
+Package destination:  0.9234036 0.25356907 0.53999287
+
+Package awaiting pickup at:  0.8546874 0.12981647 0.105489254
+Package destination:  0.47536397 0.47512794 0.92481077
+
+Package awaiting pickup at:  0.29238623 0.49551392 0.81817234
+Package destination:  0.6052027 0.26628602 0.832945
+
+Package awaiting pickup at:  0.7959501 0.33461964 0.3988685
+Package destination:  0.9583489 0.45304948 0.9290247
+
+Package awaiting pickup at:  0.010574281 0.8036832 0.52199835
+Package destination:  0.78395987 0.899236 0.08324045
+
+Package awaiting pickup at:  0.86390257 0.60121375 0.48759598
+Package destination:  0.026804209 0.8359078 0.34063685
+
+Package awaiting pickup at:  0.3288828 0.058680713 0.9701046
+Package destination:  0.769363 0.87215126 0.5419369
+
+Package awaiting pickup at:  0.83196473 0.056685984 0.020665646
+Package destination:  0.2082951 0.71203274 0.5708618
+
+Package awaiting pickup at:  0.07152748 0.436593 0.5483036
+Package destination:  0.6163286 0.7947044 0.42931223
+
+Package awaiting pickup at:  0.3098061 0.5069103 0.2970273
+Package destination:  0.9673129 0.14552301 0.75400215
+
+Package awaiting pickup at:  0.40429723 0.8892779 0.9256451
+Package destination:  0.7418596 0.16745907 0.38218248
+
+Package awaiting pickup at:  0.65457755 0.08968747 0.9444023
+Package destination:  0.17855513 0.2087748 0.5813822
+
+Package awaiting pickup at:  0.03098178 0.3960575 0.021204472
+Package destination:  0.11699742 0.6089682 0.9199473
+
+Package awaiting pickup at:  0.7852449 0.638949 0.18776017
+Package destination:  0.43186665 0.20174539 0.19495928
+
+Package awaiting pickup at:  0.859417 0.693162 0.9944531
+Package destination:  0.529668 0.49668276 0.84110564
+
+Package awaiting pickup at:  0.31034237 0.35414952 0.34731704
+Package destination:  0.68851274 0.28362626 0.79929626
+
+Package awaiting pickup at:  0.022308111 0.60081184 0.15439713
+Package destination:  0.048094988 0.33263844 0.22098869
+
+Package awaiting pickup at:  0.8625906 0.8857576 0.63722044
+Package destination:  0.44631314 0.63427556 0.28473717
+
+Package awaiting pickup at:  0.56412226 0.17579955 0.29088217
+Package destination:  0.1810807 0.87622553 0.5701163
+
+Package awaiting pickup at:  0.7666955 0.8498853 0.5808668
+Package destination:  0.39585954 0.068823755 0.014024794
+
+Package awaiting pickup at:  0.024962306 0.6651673 0.116291285
+Package destination:  0.7987299 0.83396816 0.60366124
+
+Package awaiting pickup at:  0.5994058 0.5260755 0.058211207
+Package destination:  0.84867686 0.7291126 0.42587018
+
+Package awaiting pickup at:  0.27898866 0.7230685 0.3100719
+Package destination:  0.89186454 0.56414354 0.3825661
+
+Package awaiting pickup at:  0.9143987 0.28502512 0.43899673
+Package destination:  0.07027435 0.6481494 0.1996836
+
+Package awaiting pickup at:  0.51153934 0.7831265 0.85020596
+Package destination:  0.6059441 0.008764625 0.058571577
+
+Package awaiting pickup at:  0.101121366 0.09965432 0.60502213
+Package destination:  0.07126242 0.02970016 0.3595739
+
+Package awaiting pickup at:  0.47474468 0.91598046 0.26003492
+Package destination:  0.0106880665 0.77401286 0.8185364
+
+Package awaiting pickup at:  0.64856505 0.42412752 0.68545926
+Package destination:  0.4143703 0.30179387 0.16077173
+
+Package awaiting pickup at:  0.9319543 0.6165347 0.89952594
+Package destination:  0.33864743 0.1142109 0.79892963
+
+Package awaiting pickup at:  0.43307418 0.7583527 0.03988564
+Package destination:  0.7760789 0.79862195 0.84130645
+
+Package awaiting pickup at:  0.69304305 0.4777059 0.5924349
+Package destination:  0.58368355 0.8880418 0.2635681
+
+Package awaiting pickup at:  0.596445 0.47296888 0.79738104
+Package destination:  0.8455451 0.333636 0.25237858
+
+Package awaiting pickup at:  0.14941394 0.6161244 0.6652322
+Package destination:  0.12583625 0.73302144 0.49777305
+
+Package awaiting pickup at:  0.51589835 0.39471847 0.90213245
+Package destination:  0.082179606 0.9560359 0.5945498
+
+Package awaiting pickup at:  0.11195582 0.7320141 0.860977
+Package destination:  0.73832864 0.48706746 0.6056363
+
+Package awaiting pickup at:  0.4929757 0.8729148 0.035078824
+Package destination:  0.68262964 0.94334215 0.20524895
+
+Package awaiting pickup at:  0.79233307 0.5618752 0.017160654
+Package destination:  0.16952926 0.016762614 0.7812368
+
+Package awaiting pickup at:  0.9721324 0.82331437 0.3400243
+Package destination:  0.20741552 0.46987373 0.97210723
+
+Package awaiting pickup at:  0.21266794 0.76928544 0.4237867
+Package destination:  0.5155049 0.9959742 0.66669333
+
+Package awaiting pickup at:  0.1480487 0.58657616 0.84702677
+Package destination:  0.68410003 0.1125586 0.30740374
+
+
+Number of possible transitions to STATE 1: 588
+
+...
+
+STATE 98:
+Truck 1;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 2.434877
+
+Truck 2;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 4.615795
+
+Truck 3;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 5.3425407
+
+Truck 4;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 1.300493
+
+Truck 5;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 1.2461882
+
+Truck 6;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 5.4736643
+
+Truck 7;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 2.7777567
+
+Truck 8;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 2.9086585
+
+Truck 9;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 4.7335186
+
+Truck 10;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 4.892948
+
+Truck 11;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 2.8290854
+
+Truck 12;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 5.9232855
+
+Truck 13;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 2.980791
+
+Truck 14;
+Location: 0.0 0.0 0.0
+Package Destinations:
+Distance travelled: 4.9154744
+
+
+Cost for route with 14 trucks, 42 packages, 4 truck capacity, and 3 dimensions: 58.298363
+Search time elapsed (seconds): 1.107296256
+
+----- LIMIT TESTING -----
+
+Cost for route with 20 trucks, 100 packages, 4 truck capacity, and 3 dimensions: 106.72224
+Search time elapsed (seconds): 5.133828096
+220 Transitions
+
+Cost for route with 2 trucks, 1000 packages, 4 truck capacity, and 3 dimensions: 798.74677
+Search time elapsed (seconds): 550.863110144
+2002 Transitions
+
+Program crashes at M = 200, N = 500, K = 8, Y = 3
+
