@@ -14,22 +14,25 @@ public class Startup {
     * Y - dimensions in the universe
     */
     public static void main(String args[]) {
-        int M = 1;
-        int N = 1;
-        int K = 1;
-        int Y = 1;
+        int M = 4;
+        int N = 12;
+        int K = 2;
+        int Y = 2;
 
         int i = 0;
         float startTime = System.nanoTime();
         State current = new State(M, N, K, Y);
+        int x = 1;
         while (!isGoal(current)) {
             System.out.println("STATE " + i + ":\n" + current);
             LinkedList<State> successors = successor(current);
             i++;
+            x += successors.size();
             System.out.println("Number of possible transitions to STATE " + i + ": " + successors.size());
             current = select(successors);
         }
         System.out.println("STATE " + i + ":\n" + current);
+        System.out.println(x);
         System.out.println("Cost for route with "+  M + " trucks, " + N + " packages, " + K + " truck capacity, and " + Y + " dimensions: " + current.cost());
         System.out.println("Search time elapsed (seconds): " + (System.nanoTime() - startTime)/1000000000.0);
     }

@@ -1064,5 +1064,10 @@ Cost for route with 2 trucks, 1000 packages, 4 truck capacity, and 3 dimensions:
 Search time elapsed (seconds): 550.863110144
 2002 Transitions
 
-Program crashes at M = 200, N = 500, K = 8, Y = 3
+Program crashes at M = 200, N = 500, K = 8, Y = 3 due to memory
 
+Cost for route with 50 trucks, 200 packages, 2 truck capacity, and 2 dimensions: 169.59218
+Search time elapsed (seconds): 73.131884544
+450 Transitions
+
+Program crashes at M = 100, N = 300, K = 2, Y = 2 due to memory
