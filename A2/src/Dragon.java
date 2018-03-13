@@ -1,9 +1,9 @@
-public class Queen extends Piece{
+public class Dragon extends Piece{
 
-    public Queen(int x,int y,Board board){
+    public Dragon(int x,int y,Board board){
         super(x,y,board);
-        this.name = 'Q';
-        this.value = Integer.MAX_VALUE;
+        this.name = 'D';
+        this.value = 25;
     }
 
     public void move(int x,int y){
@@ -22,7 +22,8 @@ public class Queen extends Piece{
                 (this.y==y-1 || this.y==y || this.y==y+1)
                 ) return true;
         else{
-            throw new IllegalStateException("Queen Cannot Move Here");
+            throw new IllegalStateException("Dragon Cannot Move Here");
         }
+
     }
 }
