@@ -18,11 +18,29 @@ public class Board {
     }
 
     public Boolean occupied(int x, int y){
-        if(state[x][y]!=null)return true;
+        if (x<=4 && x>=0 && y<=4 && y>=0 && state[x][y]!=null) return true;
         return false;
     }
 
     public Piece getPiece(int x, int y){
         return state[x][y];
+    }
+
+    public String toString(){
+        String out = " +01234+\n++-----+\n";
+        for(int i = 4; i >= 0 ;i--){
+            out += i;
+            out += '|';
+            for(int j = 0; j < 5;j++){
+                if(this.occupied(j,i)){
+                   out += state[j][i].name;
+                }else{
+                    out += ' ';
+                }
+            }
+            out += "|\n";
+        }
+        out += "++-----+";
+        return out;
     }
 }

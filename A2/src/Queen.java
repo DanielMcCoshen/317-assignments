@@ -16,6 +16,7 @@ public class Queen extends Piece{
 
     public boolean valid(int x,int y){
         if(     !(this.x==x && this.y==y) &&
+                !(board.getPiece(x,y) instanceof Dragon) &&
                 x<=4 && x>=0 &&
                 y<=4 && y>=0 &&
                 (this.x==x-1 || this.x==x || this.x==x+1) &&

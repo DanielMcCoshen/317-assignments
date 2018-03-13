@@ -19,14 +19,15 @@ public class Play {
             dragon.turn();
             if(dragonWin(b)){
                 System.out.println("DRAGONS WIN");
+                break;
             }
         }
 
     }
 
     private static boolean dragonWin(Board b){
-        for (int x = 0; x < 5; x ++){
-            if (b.occupied(x, 0) && b.getPiece(x, 0) instanceof Queen){
+        for (int x= 0; x < 5; x ++){
+            if (b.occupied(x, 0) && (b.getPiece(x, 0) instanceof Queen)){
                 return true;
             }
         }
