@@ -1,9 +1,9 @@
 public abstract class Piece {
-    int x;
-    int y;
-    Integer value;
-    Character name;
-    Board board;
+    private int x;
+    private int y;
+    private Integer value;
+    private Character name;
+    private Board board;
 
     public Piece(int x, int y,Board board){
         this.x = x;
@@ -34,4 +34,11 @@ public abstract class Piece {
 
     public abstract boolean valid(int x,int y);
 
+    public Integer getValue() {
+        return value;
+    }
+
+    public Character getName() {
+        return name;
+    }
 }

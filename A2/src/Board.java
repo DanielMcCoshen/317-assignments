@@ -33,7 +33,7 @@ public class Board {
             out += '|';
             for(int j = 0; j < 5;j++){
                 if(this.occupied(j,i)){
-                   out += state[j][i].name;
+                   out += state[j][i].getName();
                 }else{
                     out += ' ';
                 }
@@ -42,5 +42,28 @@ public class Board {
         }
         out += "++-----+";
         return out;
+    }
+    public int evaluate(int side){
+        int sum = 0;
+        int ourWeight = 1;
+        int oppWeight = 2;
+        if (side == 0){
+            if (Play.wightWin(this)){
+                return Integer.MAX_VALUE;
+            }
+            else if(Play.dragonWin(this)){
+                return 0;
+            }
+            for(int i = 0; i < 5; i++){
+                for(int j = 0; j < 5 ; j++){
+                    if (getPiece(i,j) != null && (getPiece(i,j) instanceof Wight)){
+                       sum += ourWeight*getPiece(i,j).getValue();
+                    }else if(getPiece(i,j) != null && !(getPiece(i,j) instanceof Wight)){
+                        sum -= oppWeight*getPiece(i,j).getValue();
+                    }
+                }
+            }
+        }
+        return sum;
     }
 }

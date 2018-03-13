@@ -25,7 +25,7 @@ public class Play {
 
     }
 
-    private static boolean dragonWin(Board b){
+    public static boolean dragonWin(Board b){
         for (int x= 0; x < 5; x ++){
             if (b.occupied(x, 0) && (b.getPiece(x, 0) instanceof Queen)){
                 return true;
@@ -34,7 +34,7 @@ public class Play {
         return  false;
     }
 
-    private static boolean wightWin(Board b){
+    public static boolean wightWin(Board b){
         for (int x = 0; x < 5; x++){
             for (int y = 0; y < 5; y++ ){
                 if(b.occupied(x, y) && b.getPiece(x, y) instanceof Queen){
