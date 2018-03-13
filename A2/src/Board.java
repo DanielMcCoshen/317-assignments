@@ -115,10 +115,16 @@ public class Board {
         return toRet;
     }
 
-    public int evaluate(int side){
+    public int evaluate(int side, int turn){
         int sum = 0;
         int ourWeight = 1;
-        int oppWeight = 2;
+        int oppWeight = 1;
+        int distWeight = 1;
+        int timeWeight = 1;
+        if (Play.checkTie(this,turn)){
+            return 0;
+        }
+        sum += timeWeight*turn/10;
         if (side == 0){
             if (Play.wightWin(this)){
                 return Integer.MAX_VALUE;
@@ -131,6 +137,7 @@ public class Board {
                     if (getPiece(i,j) != null && (getPiece(i,j) instanceof Wight)){
                        sum += ourWeight*getPiece(i,j).getValue();
                     }else if(getPiece(i,j) != null && !(getPiece(i,j) instanceof Wight)){
+                        if(getPiece(i,j) instanceof Queen) sum -= distWeight*(5-getPiece(i,j).getY());
                         sum -= oppWeight*getPiece(i,j).getValue();
                     }
                 }
@@ -145,6 +152,7 @@ public class Board {
             for(int i = 0; i < 5; i++){
                 for(int j = 0; j < 5 ; j++){
                     if (getPiece(i,j) != null && !(getPiece(i,j) instanceof Wight)){
+                        if(getPiece(i,j) instanceof Queen) sum += distWeight*(5-getPiece(i,j).getY());
                         sum += ourWeight*getPiece(i,j).getValue();
                     }else if(getPiece(i,j) != null && (getPiece(i,j) instanceof Wight)){
                         sum -= oppWeight*getPiece(i,j).getValue();
