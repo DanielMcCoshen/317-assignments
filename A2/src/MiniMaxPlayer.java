@@ -30,7 +30,6 @@ public class MiniMaxPlayer extends Player {
         int i = 1;
         for (Board b : moves){
             System.out.println("Evaluating move " + i + " of " + moves.size());
-            System.out.println(b);
             int check = minimax(b, (side +1 )%2, false, turns+ 1, maxLevel);
             if (check > currentval){
                 currentval = check;
@@ -54,6 +53,7 @@ public class MiniMaxPlayer extends Player {
                 }
             }
         }
+            System.out.println(current);
             board.getPiece(xFrom, yFrom).move(xTo, yTo);
         turns ++;
     }

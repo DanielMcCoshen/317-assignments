@@ -18,8 +18,9 @@ public class Wight extends Piece{
         if(x<=4 && x>=0 && y<=4 && y>=0 && !(board.getPiece(x,y) instanceof Queen)){
             if(board.occupied(x,y) && (this.x==x-1 || this.x==x+1) && (this.y==y-1 || this.y==y+1)){
                 return true;
-            }else if(   (this.x==x && (this.y==y-1 || this.y==y+1)) !=
-                        (this.y==y && (this.x==x-1 || this.x==x+1)) ){
+            }else if(   !board.occupied(x,y) &&
+                        ((this.x==x && (this.y==y-1 || this.y==y+1)) !=
+                        (this.y==y && (this.x==x-1 || this.x==x+1))) ){
                 return true;
             }
         }
