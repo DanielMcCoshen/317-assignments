@@ -3,7 +3,7 @@ public class Dragon extends Piece{
     public Dragon(int x,int y,Board board){
         super(x,y,board);
         this.name = 'D';
-        this.value = 25;
+        this.value = 3;
     }
 
     public void move(int x,int y){

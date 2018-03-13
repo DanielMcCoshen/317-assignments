@@ -2,8 +2,8 @@ public class Wight extends Piece{
 
     public Wight(int x,int y,Board board){
         super(x,y,board);
-        this.name = 'Q';
-        this.value = Integer.MAX_VALUE;
+        this.name = 'W';
+        this.value = 2;
     }
 
     public void move(int x,int y){

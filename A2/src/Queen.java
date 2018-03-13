@@ -3,7 +3,7 @@ public class Queen extends Piece{
     public Queen(int x,int y,Board board){
         super(x,y,board);
         this.name = 'Q';
-        this.value = Integer.MAX_VALUE;
+        this.value = 11;
     }
 
     public void move(int x,int y){
