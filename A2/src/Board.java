@@ -22,4 +22,7 @@ public class Board {
         return false;
     }
 
+    public Piece getPiece(int x, int y){
+        return state[x][y];
+    }
 }
