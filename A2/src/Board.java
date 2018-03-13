@@ -73,14 +73,16 @@ public class Board {
                     Piece p = getPiece(x,y);
                     if(p !=null){
                         if (p instanceof Wight){
-                            for(int x2 = 0; x < 5; x++){
-                                for (int y2 = 0; y < 5; y++){
-                                  Board b = new Board(this);
-                                  try{
-                                    b.getPiece(x,y).move(x2,y2);
-                                    toRet.add(b);
-                                  }
-                                  catch (IllegalStateException e){}
+                            //System.out.println("Found piece" + x + " " + y);
+                            for(int x2 = 0; x2 < 5; x2++){
+                                for (int y2 = 0; y2 < 5; y2++){
+                                    //System.out.println("attempting to move");
+                                    Board b = new Board(this);
+                                    try{
+                                        b.getPiece(x,y).move(x2,y2);
+                                        toRet.add(b);
+                                    }
+                                    catch (IllegalStateException e){}
                                 }
                             }
                         }
@@ -94,8 +96,8 @@ public class Board {
                     Piece p = getPiece(x,y);
                     if(p !=null){
                         if (!(p instanceof Wight)){
-                            for(int x2 = 0; x < 5; x++){
-                                for (int y2 = 0; y < 5; y++){
+                            for(int x2 = 0; x2 < 5; x2++){
+                                for (int y2 = 0; y2 < 5; y2++){
                                     Board b = new Board(this);
                                     try{
                                         b.getPiece(x,y).move(x2,y2);

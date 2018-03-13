@@ -7,8 +7,8 @@ public class Play {
 
     public static void main(String args[]) throws IOException{
         Board b = new Board();
-        Player wight = new HumanPlayer(0,b);
-        Player dragon = new HumanPlayer(1, b);
+        Player wight = new MiniMaxPlayer(0,b);
+        Player dragon = new MiniMaxPlayer(1, b);
 
         while(true){
             int turns = 0;
