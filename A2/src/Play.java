@@ -10,7 +10,8 @@ public class Play {
         Player wight = new HumanPlayer(0,b);
         Player dragon = new HumanPlayer(1, b);
 
-        while (true){
+        while(true){
+            int turns = 0;
             wight.turn();
             if (wightWin(b)){
                 System.out.println("WIGHTS WIN");
@@ -19,6 +20,10 @@ public class Play {
             dragon.turn();
             if(dragonWin(b)){
                 System.out.println("DRAGONS WIN");
+                break;
+            }
+            if(checkTie(b, turns)){
+                System.out.println("DRAW GAME");
                 break;
             }
         }
@@ -43,5 +48,9 @@ public class Play {
             }
         }
         return true;
+    }
+
+    public static boolean checkTie(Board b, int turns){
+        return b.successors(0, turns).size() == 0 || b.successors(1, turns).size() == 0;
     }
 }

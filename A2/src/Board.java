@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class Board {
     Piece[][] state;
 
@@ -9,7 +11,23 @@ public class Board {
     }
 
     public Board(Board board){
-
+        state = new Piece[5][5];
+        for(int x = 0; x < 5; x++){
+            for (int y = 0; y < 5; y++){
+                Piece p = board.getPiece(x,y);
+                if(p !=null){
+                    if (p instanceof Queen){
+                        state[x][y] = new Queen(x, y, this);
+                    }
+                    if (p instanceof Dragon){
+                        state[x][y] = new Dragon(x,y,this);
+                    }
+                    if (p instanceof Wight){
+                        state[x][y] = new Wight(x,y,this);
+                    }
+                }
+            }
+        }
     }
 
     public void move(Piece piece,int x, int y){
@@ -43,6 +61,60 @@ public class Board {
         out += "++-----+";
         return out;
     }
+
+    public LinkedList<Board> successors(int side, int turns){
+        LinkedList<Board> toRet = new LinkedList<>();
+        if (turns == 50){
+            return toRet;
+        }
+        if (side == 0){
+            for(int x = 0; x < 5; x++){
+                for (int y = 0; y < 5; y++){
+                    Piece p = getPiece(x,y);
+                    if(p !=null){
+                        if (p instanceof Wight){
+                            for(int x2 = 0; x < 5; x++){
+                                for (int y2 = 0; y < 5; y++){
+                                  Board b = new Board(this);
+                                  try{
+                                    b.getPiece(x,y).move(x2,y2);
+                                    toRet.add(b);
+                                  }
+                                  catch (IllegalStateException e){}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if (side == 1){
+            for(int x = 0; x < 5; x++){
+                for (int y = 0; y < 5; y++){
+                    Piece p = getPiece(x,y);
+                    if(p !=null){
+                        if (!(p instanceof Wight)){
+                            for(int x2 = 0; x < 5; x++){
+                                for (int y2 = 0; y < 5; y++){
+                                    Board b = new Board(this);
+                                    try{
+                                        b.getPiece(x,y).move(x2,y2);
+                                        toRet.add(b);
+                                    }
+                                    catch (IllegalStateException e){}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else{
+            throw new IllegalStateException("You are on a illegal players turn");
+        }
+        return toRet;
+    }
+
     public int evaluate(int side){
         int sum = 0;
         int ourWeight = 1;
@@ -63,6 +135,24 @@ public class Board {
                     }
                 }
             }
+        }else if(side == 1){
+            if (Play.dragonWin(this)){
+                return Integer.MAX_VALUE;
+            }
+            else if(Play.wightWin(this)){
+                return 0;
+            }
+            for(int i = 0; i < 5; i++){
+                for(int j = 0; j < 5 ; j++){
+                    if (getPiece(i,j) != null && !(getPiece(i,j) instanceof Wight)){
+                        sum += ourWeight*getPiece(i,j).getValue();
+                    }else if(getPiece(i,j) != null && (getPiece(i,j) instanceof Wight)){
+                        sum -= oppWeight*getPiece(i,j).getValue();
+                    }
+                }
+            }
+        }else{
+            throw new IllegalStateException("You are on a illegal players turn");
         }
         return sum;
     }

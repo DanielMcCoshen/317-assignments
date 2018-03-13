@@ -1,9 +1,9 @@
 public abstract class Piece {
-    private int x;
-    private int y;
-    private Integer value;
-    private Character name;
-    private Board board;
+    protected int x;
+    protected int y;
+    protected Integer value;
+    protected Character name;
+    protected Board board;
 
     public Piece(int x, int y,Board board){
         this.x = x;

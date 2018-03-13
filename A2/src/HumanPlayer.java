@@ -27,7 +27,7 @@ public class HumanPlayer extends Player {
         else{
             throw new IllegalStateException("WTF");
         }
-
+        while(true) {
         while(p == null) {
             System.out.println("Select a piece(x y)");
             int x = in.nextInt();
@@ -53,7 +53,7 @@ public class HumanPlayer extends Player {
             }
         }
 
-        while(true) {
+
             System.out.println("Select a place to move(x y)");
             int x = in.nextInt();
             int y = in.nextInt();
