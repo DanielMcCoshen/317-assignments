@@ -7,17 +7,21 @@ public class Play {
 
     public static void main(String args[]) throws IOException{
         Board b = new Board();
-        Player wight = new HumanPlayer(0,b);
+        Player wight = new MiniMaxPlayer(0,b);
         Player dragon = new MiniMaxPlayer(1, b);
 
         while(true){
             int turns = 0;
-            wight.turn();
+            b = wight.turn();
+            dragon.setBoard(b);
+
             if (wightWin(b)){
                 System.out.println("WIGHTS WIN");
                 break;
             }
-            dragon.turn();
+
+            b = dragon.turn();
+            wight.setBoard(b);
             if(dragonWin(b)){
                 System.out.println("DRAGONS WIN");
                 break;

@@ -13,10 +13,11 @@ public class HumanPlayer extends Player {
         in = new Scanner(System.in);
     }
     @Override
-    public void turn() throws IOException{
+    public Board turn() throws IOException{
         Piece p = null;
         //Runtime.getRuntime().exec("clear");
         System.out.println(board);
+        Board toRet = new Board(board);
 
         if (side == 0){
             System.out.println("Wights' turn");
@@ -32,11 +33,11 @@ public class HumanPlayer extends Player {
             System.out.println("Select a piece(x y)");
             int x = in.nextInt();
             int y = in.nextInt();
-            if (!board.occupied(x, y)){
+            if (!toRet.occupied(x, y)){
                 System.out.println("no piece at " + x + ", " + y);
                 continue;
             }
-            p = board.getPiece(x,y);
+            p = toRet.getPiece(x,y);
             if (side == 0){ //is on wights side
                 if (!(p instanceof Wight)){ //can only control wights
                     p = null;
@@ -65,7 +66,6 @@ public class HumanPlayer extends Player {
                 System.out.println(e.getMessage());
             }
         }
-
-
+        return toRet;
     }
 }

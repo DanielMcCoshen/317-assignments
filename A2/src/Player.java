@@ -6,8 +6,15 @@ import java.io.IOException;
 public abstract class Player {
 
     int side;
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
+
     Board board;
 
 
-    public abstract void turn() throws IOException;
+    public abstract Board turn() throws IOException;
+
+
 }

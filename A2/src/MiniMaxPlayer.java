@@ -10,7 +10,7 @@ public class MiniMaxPlayer extends Player {
         turns = 0;
     }
     @Override
-    public void turn() throws IOException {
+    public Board turn() throws IOException {
         int maxLevel = 3;
         System.out.println(board);
 
@@ -37,25 +37,9 @@ public class MiniMaxPlayer extends Player {
             }
             i++;
         }
-
-        //preform that action
-        int xFrom  = 0, yFrom = 0, xTo = 0, yTo = 0;
-
-        for (int x = 0; x < 5; x ++){
-            for (int y = 0; y < 5; y ++){
-                if (board.getPiece(x,y) == null  && current.getPiece(x,y) != null){ //the piece was moved to here
-                    xTo= x;
-                    yTo= y;
-                }
-                if (board.getPiece(x, y) != null && current.getPiece(x,y) == null){ //from here
-                    xFrom = x;
-                    yFrom = y;
-                }
-            }
-        }
-            System.out.println(current);
-            board.getPiece(xFrom, yFrom).move(xTo, yTo);
         turns ++;
+        return current;
+
     }
 
     int minimax(Board b, int eval, boolean max, int level, int maxLevel){
