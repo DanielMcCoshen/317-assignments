@@ -15,7 +15,7 @@ public class Wight extends Piece{
     }
 
     public boolean valid(int x,int y){
-        if(x<=4 && x>=0 && y<=4 && y>=0 && !(board.getPiece(x,y) instanceof Queen)){
+        if(x<=4 && x>=0 && y<=4 && y>=0 && !(board.getPiece(x,y) instanceof Wight)){
             if(board.occupied(x,y) && (this.x==x-1 || this.x==x+1) && (this.y==y-1 || this.y==y+1)){
                 return true;
             }else if(   !board.occupied(x,y) &&

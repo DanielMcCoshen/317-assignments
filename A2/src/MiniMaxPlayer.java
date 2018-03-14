@@ -11,7 +11,7 @@ public class MiniMaxPlayer extends Player {
     }
     @Override
     public Board turn() throws IOException {
-        int maxLevel = 5;
+        int maxLevel = 4;
         System.out.println(board);
 
         if (side == 0){
@@ -30,8 +30,10 @@ public class MiniMaxPlayer extends Player {
         int i = 1;
         for (Board b : moves){
             System.out.println("Evaluating move " + i + " of " + moves.size());
-            int check = minimax(b, (side +1 )%2, false, turns+ 1, maxLevel);
+            int check = minimax(b, (side +1 )%2, false, turns+ 1, maxLevel + turns);
+            System.out.println(check);
             if (check > currentval){
+                System.out.println("selecting next state");
                 currentval = check;
                 current = b;
             }
@@ -51,7 +53,7 @@ public class MiniMaxPlayer extends Player {
             return b.evaluate(side,level);
         }
         else if (max){ //recursive case 1: max of nodes below
-            int toRet = 0;
+            int toRet = Integer.MIN_VALUE;
             for (Board check: b.successors(eval, level)){
                 int temp = minimax(check, (eval +1) % 2, !max, level + 1, maxLevel);
                 if (temp > toRet){
@@ -61,7 +63,7 @@ public class MiniMaxPlayer extends Player {
             return  toRet;
         }
         else{ //recursive case 2: min of nodes below
-            int toRet = 0;
+            int toRet = Integer.MAX_VALUE;
             for (Board check: b.successors(eval, level)){
                 int temp = minimax(check, (eval +1) % 2, !max, level + 1, maxLevel);
                 if (temp < toRet){
