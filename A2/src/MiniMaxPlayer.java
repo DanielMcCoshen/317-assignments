@@ -11,7 +11,7 @@ public class MiniMaxPlayer extends Player {
     }
     @Override
     public Board turn() throws IOException {
-        int maxLevel = 3;
+        int maxLevel = 5;
         System.out.println(board);
 
         if (side == 0){
@@ -25,8 +25,8 @@ public class MiniMaxPlayer extends Player {
         LinkedList<Board> moves = board.successors(side, turns);
         System.out.println("Found possible moves");
         Board current = moves.getFirst();
-        System.out.print("Creating first value");
-        int currentval = minimax(moves.getFirst(), (side +1 )%2, false, turns+ 1, maxLevel);
+        System.out.println("Creating first value");
+        int currentval = minimax(moves.getFirst(), (side +1 )%2, false, turns+ 1, maxLevel + turns);
         int i = 1;
         for (Board b : moves){
             System.out.println("Evaluating move " + i + " of " + moves.size());
@@ -43,7 +43,8 @@ public class MiniMaxPlayer extends Player {
     }
 
     int minimax(Board b, int eval, boolean max, int level, int maxLevel){
-        if (level == maxLevel){ //base case 1: at maximum search level
+        //System.out.println("minimax level" + level  + " of " + maxLevel);
+        if (level >= maxLevel){ //base case 1: at maximum search level
             return b.evaluate(side, level);
         }
         else if(b.evaluate(side, level) == 0 || b.evaluate(side, level) == Integer.MAX_VALUE){//base case: 2 win or loss

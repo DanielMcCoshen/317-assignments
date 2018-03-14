@@ -68,6 +68,7 @@ public class Board {
             return toRet;
         }
         if (side == 0){
+            //System.out.println("successor for wights");
             for(int x = 0; x < 5; x++){
                 for (int y = 0; y < 5; y++){
                     Piece p = getPiece(x,y);
@@ -91,6 +92,7 @@ public class Board {
             }
         }
         else if (side == 1){
+           // System.out.println("successor for dragons");
             for(int x = 0; x < 5; x++){
                 for (int y = 0; y < 5; y++){
                     Piece p = getPiece(x,y);
