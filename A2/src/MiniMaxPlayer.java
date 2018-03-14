@@ -11,7 +11,7 @@ public class MiniMaxPlayer extends Player {
     }
     @Override
     public Board turn() throws IOException {
-        int maxLevel = 4;
+        int maxLevel = 5 ;
         System.out.println(board);
 
         if (side == 0){
