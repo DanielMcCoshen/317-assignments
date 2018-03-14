@@ -121,10 +121,10 @@ public class Board {
 
     public int evaluate(int side, int turn){
         int sum = 0;
-        int ourWeight = 1;
+        int ourWeight = 2;
         int oppWeight = 1;
-        int distWeight = 1;
-        int timeWeight = 1;
+        int distWeight = 2;
+        int timeWeight = 2;
         if (Play.checkTie(this,turn)){
             return Integer.MIN_VALUE;
         }
