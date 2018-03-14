@@ -126,15 +126,15 @@ public class Board {
         int distWeight = 2;
         int timeWeight = 2;
         if (Play.checkTie(this,turn)){
-            return Integer.MIN_VALUE;
+            return Integer.MIN_VALUE / 2;
         }
         sum += timeWeight*turn/10;
         if (side == 0){
             if (Play.wightWin(this)){
-                return Integer.MAX_VALUE;
+                return Integer.MAX_VALUE - turn;
             }
             else if(Play.dragonWin(this)){
-                return Integer.MIN_VALUE;
+                return Integer.MIN_VALUE  + turn;
             }
             for(int i = 0; i < 5; i++){
                 for(int j = 0; j < 5 ; j++){
@@ -148,10 +148,10 @@ public class Board {
             }
         }else if(side == 1){
             if (Play.dragonWin(this)){
-                return Integer.MAX_VALUE;
+                return Integer.MAX_VALUE - turn;
             }
             else if(Play.wightWin(this)){
-                return Integer.MIN_VALUE;
+                return Integer.MIN_VALUE + turn;
             }
             for(int i = 0; i < 5; i++){
                 for(int j = 0; j < 5 ; j++){

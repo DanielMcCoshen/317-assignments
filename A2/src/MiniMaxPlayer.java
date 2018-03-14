@@ -15,10 +15,10 @@ public class MiniMaxPlayer extends Player {
         System.out.println(board);
 
         if (side == 0){
-            System.out.println("Wights' turn");
+            System.out.println("Wights' turn " + turns);
         }
         else if (side == 1){
-            System.out.println("Dragons' turn");
+            System.out.println("Dragons' turn " + turns);
         }
 
         System.out.println("Thinking..."); //choose an action
